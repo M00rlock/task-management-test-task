@@ -1,7 +1,7 @@
 // server.ts
 import express from 'express';
 import { generateId } from './helpers';
-import { ITask, ISubtask } from './tasks.interface';
+import { ITask } from './tasks.interface';
 import db  from './db';
 
 const cors = require('cors');
@@ -25,33 +25,6 @@ app.get('/tasks', (req, res) => {
     });
 });
 
-
-        // db.all('SELECT * FROM subtasks', [], (err, subtasks: ISubtask[]) => {
-        //     if (err) return res.status(500).json({ error: err.message });
-
-        
-
-        //     const buildHierarchy = (items: ISubtask[], parentId: string | null = null): ISubtask[] => {
-        //         return items
-        //             .filter(item => item.parent_id === parentId)
-        //             .map(item => ({
-        //                 ...item,
-        //                 subtasks: buildHierarchy(items, item.id),
-        //             }));
-        //     };
-
-        //     const todosWithSubtasks = todos.map(todo => ({
-        //         ...todo,
-        //         subtasks: buildHierarchy(subtasks, null).filter(st => st.todo_id === todo.id),
-        //     }));
-
-        //     res.json(todosWithSubtasks);
-
-        //     return;
-        // });
-
-        
-
 // Add a new todo with subtasks
 app.post('/tasks', (req, res) => {
     const { title, description } = req.body;
@@ -67,11 +40,7 @@ app.post('/tasks', (req, res) => {
             err => {
                 if (err) return res.status(500).json({ error: err.message });
 
-                // if (subtasks && subtasks.length > 0) {
-                //     addSubtasks(db, subtasks, id, null);
-                // } else {
                 res.json({ id, title, description });
-                // }
 
                 return;
             }
