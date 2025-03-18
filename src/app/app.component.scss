@@ -1,0 +1,12 @@
+mat-toolbar {
+
+  border-bottom: 1px solid darken(rgb(168, 160, 50), 40%);
+}
+.title {
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    color: #2e2e00;
+  }
+}

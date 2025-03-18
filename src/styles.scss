@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-toolbar {
+  background: #a8a032 !important;
+  color: #2e2e00 !important;
+}
+
+button {
+  background: rebeccapurple !important;
+
+  &:hover {
+    background: lighten(rebeccapurple, 20%) !important;
+  }
+
+  margin-left: 10px;
+}

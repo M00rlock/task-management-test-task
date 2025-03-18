@@ -1,0 +1,40 @@
+.title {
+  padding-top: 10px;
+}
+
+h6 {
+  color: wheat;
+  text-align: center;
+}
+
+.subtask-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  button {
+    margin-top: 10px;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Ensures full width usage */
+}
+
+.right-buttons {
+  display: flex;
+  gap: 8px; /* Adds spacing between Cancel and Save buttons */
+}
+
+.subtask-item {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(22, 18, 21);
+  color: rgb(233, 224, 228);
+
+  input {
+    margin: 0 10px;
+  }
+}

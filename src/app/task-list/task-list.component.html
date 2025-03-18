@@ -1,0 +1,21 @@
+<div *ngIf="isLoading" class="loading-spinner-container">
+  <mat-spinner></mat-spinner>
+</div>
+
+<mat-toolbar color="primary">
+  <span>Add Task</span>
+  <span class="spacer"></span>
+  <button mat-icon-button (click)="openTaskDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="container task-list-wrapper">
+  <app-task-item 
+    *ngFor="let task of tasks"
+    [task]="task"
+    (edit)="openTaskDialog($event)"
+    (delete)="deleteTask($event)">
+  </app-task-item>
+</div>
+

@@ -1,0 +1,17 @@
+.container {
+  gap: 16px;
+  padding: 16px;
+}
+
+.task-list-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.loading-spinner-container {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+}
